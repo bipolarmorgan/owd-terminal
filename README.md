@@ -3,7 +3,8 @@
 
 <p>
     <a href="https://github.com/owdproject/owd-client/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" /></a>
-    <a href="https://github.com/owdproject/owd-client"><img src="https://img.shields.io/badge/owd-client-3A9CB6?logo=vue" /></a>
+    <a href="https://github.com/owdproject/owd-client"><img src="https://img.shields.io/badge/owd-client-3A9CB6" /></a>
+    <a href="https://github.com/topics/owd-modules"><img src="https://img.shields.io/badge/owd-modules-888" /></a>
     <a href="https://hacklover.net/patreon"><img src="https://img.shields.io/badge/become-a%20patron-orange" alt="Become a Patron" /></a>
     <a href="https://hacklover.net/discord"><img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg" alt="Join us on Discord" /></a>
 </p>
@@ -15,7 +16,7 @@
 It's based on [jQuery Terminal Emulator](https://github.com/jcubic/jquery.terminal) because I use this library from the beginning.
 Open Web Desktop is designed to support multiple terminals, other libraries like xterm and vue-terminal will be implemented later.
 
-## Quick install
+## Quick install<
 - Copy the content of the `client` module folder into `owd-client/src/modules/terminal`
 - Add the reference of this module into `owd-client/config/modules.json` 
 
