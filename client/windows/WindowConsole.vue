@@ -40,8 +40,7 @@
             checkArity: false,
             onCommandNotFound: () => false,
             keydown: () => {
-              if (this.$terminal.events && this.$terminal.events.hasOwnProperty('keydown')) {
-                // run each keydown event
+              if (this.$terminal.events && Object.prototype.hasOwnProperty.call(this.$terminal, "keydown")) {                // run each keydown event
                 if (this.$terminal.events['keydown'].length > 0) {
                   this.$terminal.events['keydown'].forEach(event => event())
                 }
