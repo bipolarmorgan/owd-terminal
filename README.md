@@ -16,7 +16,7 @@
 It's based on [jQuery Terminal Emulator](https://github.com/jcubic/jquery.terminal) because I use this library from the beginning.
 Open Web Desktop is designed to support multiple terminals, other libraries like xterm and vue-terminal will be implemented later.
 
-## Quick install<
+## Quick install
 - Copy the content of the `client` module folder into `owd-client/src/modules/terminal`
 - Add the reference of this module into `owd-client/config/modules.json` 
 
