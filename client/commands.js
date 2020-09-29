@@ -1,6 +1,6 @@
 export default ({ store }) => {
   return {
-    'terminal': function() {
+    'console': function() {
       store.dispatch('core/windows/windowCreate', 'WindowConsole');
     }
   }
