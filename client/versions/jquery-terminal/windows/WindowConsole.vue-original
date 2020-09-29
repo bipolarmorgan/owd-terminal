@@ -1,59 +1,41 @@
 <template>
   <Window :title="data.title" :window="data">
-    <div id="console" class="terminal" />
+    <div :id="storeName" class="terminal" />
   </Window>
 </template>
 
 <script>
-// jQuery + Vue? a facc ro cazz
-window.jQuery = require('jquery');
+// jQuery Terminal integration
 
-// jCubic Terminal integration
-require('jquery.terminal');
 import 'jquery.terminal/css/jquery.terminal.min.css'
-
-import Window from "../../../core/components/window/Window";
+import Window from "~/core/components/window/Window";
 
 export default {
   name: "WindowConsole",
   components: {Window},
+  data() {
+    return {
+      storeName: 'terminal-' + this.data.uniqueID
+    }
+  },
   props: {
     data: Object
   },
   watch: {
-    // when window opens or closes
+    // when window closes
     'data.storage.closed': function (val) {
       if (val === true) {
-        this.$terminal.exec('reset')
+        this.instance.exec('reset')
       }
     }
   },
-
-  mounted() {
-    const terminalElement = window.jQuery('#console');
-
-    const terminalInstance = terminalElement.terminal(
-        this.$terminal.commands,
-        {
-          greetings: this.$terminal.greetings,
-          prompt: '> ',
-          checkArity: false,
-          onCommandNotFound: () => false,
-          keydown: () => {
-            if (this.$terminal.events && this.$terminal.events.hasOwnProperty('keydown')) {
-              // run each keydown event
-              if (this.$terminal.events['keydown'].length > 0) {
-                this.$terminal.events['keydown'].forEach(event => event())
-              }
-            }
-          }
-        }
-    );
-
-    this.$terminal.setInstance(terminalInstance);
+  computed: {
+    instance() {
+      return this.storeName ? this.$store.getters[this.storeName+'/instance'] : undefined
+    },
   },
-  destroyed() {
-    this.$terminal.destroy()
+  mounted() {
+    this.$store.dispatch(`${this.storeName}/terminalCreate`, this.storeName);
   }
 }
 </script>

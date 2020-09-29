@@ -1,12 +1,7 @@
 {
   "name": "terminal",
-  "version": "1.1.0",
-  "license": "MIT",
-  "homepage": "https://github.com/hacklover/owd-terminal",
-  "author": {
-    "name": "hacklover",
-    "url": "https://hacklover.net"
-  },
+  "commands": true,
+  "storeInstance": true,
   "windows": [
     {
       "name": "WindowConsole",
