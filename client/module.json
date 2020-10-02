@@ -1,12 +1,9 @@
 {
   "name": "terminal",
-  "version": "1.1.0",
-  "license": "MIT",
-  "homepage": "https://github.com/hacklover/owd-terminal",
-  "author": {
-    "name": "hacklover",
-    "url": "https://hacklover.net"
-  },
+  "version": "1.2.0",
+  "singleton": false,
+  "autostart": true,
+  "commands": true,
   "windows": [
     {
       "name": "WindowConsole",
@@ -33,5 +30,11 @@
   ],
   "dependencies": {
     "jquery.terminal": "^2.17.4"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/hacklover/owd-iframe",
+  "author": {
+    "name": "hacklover",
+    "url": "https://hacklover.net"
   }
 }
