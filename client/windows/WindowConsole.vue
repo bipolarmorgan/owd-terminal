@@ -15,7 +15,7 @@
     components: {Window},
     data() {
       return {
-        storeName: 'terminal-' + this.data.uniqueID
+        storeName: `${this.data.module.name}-${this.data.uniqueID}`
       }
     },
     props: {
